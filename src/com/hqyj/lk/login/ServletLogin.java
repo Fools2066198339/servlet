@@ -1,6 +1,4 @@
-package com.hqyj.lk.request;
-
-
+package com.hqyj.lk.login;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
