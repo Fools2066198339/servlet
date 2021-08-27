@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--定义servlet-->
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <!--此处配置helloServlet对应的java全类名       -->
+        <servlet-class>com.hqyj.lk.servlet.HelloServlet</servlet-class>
+        <!--load-on-startup配一个正整数，servlet初始化时间-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <!--url:http://localhost:8080/虚拟目录/hello-->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+</web-app>
