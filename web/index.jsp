@@ -12,7 +12,7 @@
   </head>
   <body>
   hello web
-  <form action="http://localhost:8080/servlet01_war_exploded/ServletLogin"
+  <form action="./ServletLogin"
         method="post">
       用户名:<label>
       <input type="text" name="username">

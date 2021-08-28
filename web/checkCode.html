@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //点击回掉方法
+    function changecheckCode() {
+        //换图片
+        var img = document.getElementById("checkImg");
+        var date = new Date();
+        img.setAttribute("src", "checkCodeServlet?time=" + date.getTime());
+
+    }
+</script>
+<img src="checkCodeServlet" id="checkImg" onclick="changecheckCode()"><a
+        href="#" onclick="changecheckCode()" style="text-decoration:none;">看不清,
+    换一张？</a>
+</body>
+</html>
