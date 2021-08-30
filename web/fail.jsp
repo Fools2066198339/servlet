@@ -11,6 +11,15 @@
     <title>fail</title>
 </head>
 <body>
-用户名或密码错误！
+<%
+
+    Object error = session.getAttribute("error");
+    if (String.valueOf(error).equals("1")) {
+        out.write("验证码错误");
+    } else if (String.valueOf(error).equals("2")) {
+        out.write("用户名或密码错误！");
+    }
+
+%>
 </body>
 </html>

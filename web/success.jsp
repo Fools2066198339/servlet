@@ -11,6 +11,9 @@
     <title>success</title>
 </head>
 <body>
-恭喜登录成功！
+<%
+    Object success = session.getAttribute("success");
+    out.write(String.valueOf(success));
+%>
 </body>
 </html>

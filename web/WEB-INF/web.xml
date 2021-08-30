@@ -16,4 +16,9 @@
         <!--url:http://localhost:8080/虚拟目录/hello-->
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+    <!--配置session失效时间-->
+<!--    <session-config>-->
+<!--        &lt;!&ndash;session20分钟失效&ndash;&gt;-->
+<!--        <session-timeout>20</session-timeout>-->
+<!--    </session-config>-->
 </web-app>

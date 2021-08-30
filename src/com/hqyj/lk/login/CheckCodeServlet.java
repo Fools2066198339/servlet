@@ -1,4 +1,4 @@
-package com.hqyj.lk.response;
+package com.hqyj.lk.login;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -48,15 +49,22 @@ public class CheckCodeServlet extends HttpServlet {
 		//定义随机字符
 		String string =
 				"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		//获取httpSession
+		HttpSession session = request.getSession();
+		//创建验证码对象
+		StringBuffer sb=new StringBuffer();
 		//产生随机字符
 		for (int i = 0; i < 5; i++) {
 			//生产一个随机数最大值为string的长度
 			int randomIndex = random.nextInt(string.length());
 			//获取随机的字符
 			char randomChar = string.charAt(randomIndex);
+			sb.append(randomChar);
 			graphics.drawString(String.valueOf(randomChar), 5 + width * i / 5
 					, height/(random.nextInt(5)+1));
 		}
+		System.out.println(sb);
+		session.setAttribute("checkCode",sb);
 		//划干扰线
 		graphics.setColor(Color.GREEN);
 		for (int i = 0; i < 15; i++) {
